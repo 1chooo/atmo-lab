@@ -19,6 +19,6 @@ m.drawparallels(parallels, labels=[1, 0, 0, 0], fontsize=14, linewidth=0.5)
 meridians = np.arange(119., 123.1, 1.)
 m.drawmeridians(meridians, labels=[0, 0, 0, 1], fontsize=14, linewidth=0.5)
 
-plt.title('109601003')
-fig.savefig('第五題-Taiwan-109601003',dpi=600)
+plt.title('Taiwan')
+fig.savefig("Taiwan",dpi=600)
 plt.show()
