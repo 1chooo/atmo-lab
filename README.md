@@ -6,7 +6,7 @@ This is the project that observes the varing of global temperature for the first
 
 Hope you guys enjoy!!! 
 
-And be helpful for the one who also interested in Atomspheric Science.
+And be helpful for the one who also interested in Atmospheric Science.
 
 ## Create Enviroment
 > MacOS 11.5.2
