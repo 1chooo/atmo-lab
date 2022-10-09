@@ -12,14 +12,14 @@ And be helpful for the one who also interested in Atmospheric Science.
 > MacOS 11.5.2
 > 
 > conda --version: 4.11.0
-> ```
+> ``` shell
 > $ conda create --name atmpy37 python=3.7
 > $ conda activate atmpy37
 > ```
 
 ## Under atmpy37
 
->```
+>``` shell
 > $ conda install numpy
 > 
 > $ conda install matplotlib
@@ -31,7 +31,7 @@ And be helpful for the one who also interested in Atmospheric Science.
 
 ### Verify version
 
-> ```
+> ``` shell
 > $ conda --version
 > conda 4.11.0
 > 
@@ -46,7 +46,7 @@ And be helpful for the one who also interested in Atmospheric Science.
 
 ### Steps
 #### 1. Through app1 to test.
-> ```
+> ``` shell
 > $ cd basemap
 > 
 > $ python3 app1.py
@@ -57,7 +57,7 @@ And be helpful for the one who also interested in Atmospheric Science.
 > ```
 
 #### 2. Run app2 to generate the formal status.
-> ```
+> ``` shell
 > $ cd basemap
 > 
 > $ python3 app2.py
@@ -65,7 +65,7 @@ And be helpful for the one who also interested in Atmospheric Science.
 
 
 #### 3. Well done ^_^, but it still an additional try. we can try to draw a Taiwan Map.
-> ```
+> ``` shell
 > $ cd basemap
 > 
 > $ python3 DrawTW.py
