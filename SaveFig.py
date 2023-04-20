@@ -1,10 +1,15 @@
+'''
+20210610 this code shows how to read and plot a 2d surface
+temperature distribution from a NCEP surface analysis data.
+to output results for each day to a jpeg file
+'''
+
 from netCDF4 import Dataset
 import numpy as np
 import matplotlib as mpl
 mpl.use('TKAgg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
-from PIL import Image
 
 #read in the data
 data = Dataset(r'./air.sfc.2021.nc')
@@ -24,13 +29,18 @@ temp = data.variables['air'][:]
 
 fig = plt.figure(figsize=(12, 9))
 
-mp = Basemap(projection='mill',
-             llcrnrlon = 0., llcrnrlat = -90., urcrnrlon = 360., urcrnrlat = 90.,
-             resolution = 'c')
+mp = Basemap(
+    projection='mill',
+    llcrnrlon = 0., 
+    llcrnrlat = -90., 
+    urcrnrlon = 360., 
+    urcrnrlat = 90.,
+    resolution = 'c'
+)
 lon, lat = np.meshgrid(lons, lats)
 x, y =mp(lon, lat)
 
-days = np.arange(0, 169)
+days = np.arange(0, 159)
 print(days)
 #exit()
 day = 0
@@ -45,20 +55,4 @@ for i in days:
     plt.clim(200., 310.)
     #plt.show()
     #fig.savefig('global_surface_temperature', dpi = 680)
-    fig.savefig(r'jpeg2/'+ str(day)+'.jpg')
-
-
-
-
-image_frames = []
-
-days = np.arange(1,169)
-
-for k in days:
-    new_frame = Image.open(r'jpeg2/'+str(k)+'.jpg')
-    image_frames.append(new_frame)
-
-image_frames[0].save('temperature_timelapse2.gif', format = 'gif',
-                     append_images = image_frames[1:],
-                     save_all = True, duration = 150,
-                     loop = 0 )
+    fig.savefig(r'./jpeg/'+ str(day)+'.jpg')

@@ -8,6 +8,8 @@ Hope you guys enjoy!!!
 
 And be helpful for the one who also interested in Atmospheric Science.
 
+![](./temperature_timelapse.gif)
+
 ## Create Enviroment
 > MacOS 11.5.2
 > 
@@ -21,11 +23,8 @@ And be helpful for the one who also interested in Atmospheric Science.
 
 >``` shell
 > $ conda install numpy
-> 
 > $ conda install matplotlib
->
 > $ conda install basemap
-> 
 > $ conda install netcdf4
 > ```
 

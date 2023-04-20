@@ -29,17 +29,19 @@ temp = data.variables['air'][:]
 
 fig = plt.figure(figsize=(12,9))
 
-mp = Basemap(projection = 'mill',
-             llcrnrlon = 0.,
-             llcrnrlat = -90.,
-             urcrnrlon = 360.,
-             urcrnrlat = 90.,
-             resolution = 'c')
+mp = Basemap(
+    projection = 'mill',
+    llcrnrlon = 0.,
+    llcrnrlat = -90.,
+    urcrnrlon = 360.,
+    urcrnrlat = 90.,
+    resolution = 'c'
+)
 
 lon, lat = np.meshgrid(longitude,latitude)
 x, y = mp(lon,lat)
 
-c_scheme =mp.pcolor(x,y,np.squeeze(temp[0, :, :]), cmap='jet')
+c_scheme =mp.pcolor(x, y, np.squeeze(temp[0, :, :]), cmap='jet')
 mp.drawcoastlines()
 mp.drawcountries()
 cbar = mp.colorbar(c_scheme, location='bottom', pad='10%')
