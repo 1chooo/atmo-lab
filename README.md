@@ -8,29 +8,32 @@ Hope you guys enjoy!!!
 
 And be helpful for the one who also interested in Atmospheric Science.
 
-![](./temperature_timelapse.gif)
+![](./assets/imgs/temperature_timelapse.gif)
 
 ## Create Enviroment
 > MacOS 11.5.2
 > 
 > conda --version: 4.11.0
-> ``` shell
-> $ conda create --name atmpy37 python=3.7
-> $ conda activate atmpy37
+> ``` vim
+> $ conda create --name atmpy38 python=3.8
+> $ conda activate atmpy38
 > ```
 
 ## Under atmpy37
 
->``` shell
+>``` vim
 > $ conda install numpy
 > $ conda install matplotlib
-> $ conda install basemap
+> $ conda install -c anaconda basemap
+> $ conda install -c conda-forge basemap-data-hires
+> $ conda install -c conda-forge metpy
+> $ conda install pandas
 > $ conda install netcdf4
 > ```
 
 ### Verify version
 
-> ``` shell
+> ``` vim
 > $ conda --version
 > conda 4.11.0
 > 
@@ -44,28 +47,16 @@ And be helpful for the one who also interested in Atmospheric Science.
 > ```
 
 ### Steps
-#### 1. Through app1 to test.
-> ``` shell
-> $ cd basemap
-> 
-> $ python3 app1.py
-> 
-> $ python3 SaveFig.py
-> 
-> $ python3 ToGif.py
-> ```
 
-#### 2. Run app2 to generate the formal status.
-> ``` shell
-> $ cd basemap
-> 
-> $ python3 app2.py
+#### 1. Run app to generate the formal status.
+> ``` vim
+> $ python3 app.py
 > ```
 
 
-#### 3. Well done ^_^, but it still an additional try. we can try to draw a Taiwan Map.
-> ``` shell
-> $ cd basemap
-> 
+#### 2. Well done ^_^, but it still an additional try. we can try to draw a Taiwan Map.
+> ``` vim
 > $ python3 DrawTW.py
 > ```
+
+![](./assets/imgs/Taiwan.jpg)

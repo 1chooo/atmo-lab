@@ -10,11 +10,11 @@ image_frames = []
 days = np.arange(1,160)
 
 for k in days:
-    new_frame = Image.open(r'./jpeg/'+str(k)+'.jpg')
+    new_frame = Image.open(r'.assets/imgs/jpeg2/' + str(k) + '.jpg')
     image_frames.append(new_frame)
 
 image_frames[0].save(
-    'temperature_timelapse.gif', 
+    './assets/imgs/temperature_timelapse.gif', 
     format='gif',
     append_images=image_frames[1:],
     save_all=True, 

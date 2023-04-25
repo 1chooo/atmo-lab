@@ -12,18 +12,15 @@ print(data.variables)
 print(data.variables.keys())
 
 lats = data.variables['lat'][:]
-print(lats)
-
 lons = data.variables['lon'][:]
-print(lons)
-
 time = data.variables['time'][:]
+print(lats)
+print(lons)
 print(time)
 
+
 temp = data.variables['air'][:]
-
 fig = plt.figure(figsize=(12, 9))
-
 mp = Basemap(
     projection='mill',
     llcrnrlon = 0., 
@@ -34,10 +31,8 @@ mp = Basemap(
 )
 lon, lat = np.meshgrid(lons, lats)
 x, y =mp(lon, lat)
-
 days = np.arange(0, 169)
 print(days)
-#exit()
 day = 0
 for i in days:
     c_scheme = mp.pcolor(x, y, np.squeeze(temp[i, :, :]), cmap = 'jet')
@@ -50,21 +45,18 @@ for i in days:
     plt.clim(200., 310.)
     #plt.show()
     #fig.savefig('global_surface_temperature', dpi = 680)
-    fig.savefig(r'./jpeg2/'+ str(day)+'.jpg')
-
-
-
+    fig.savefig(r'./assets/jpeg2/'+ str(day)+'.jpg')
 
 image_frames = []
 
 days = np.arange(1,169)
 
 for k in days:
-    new_frame = Image.open(r'./jpeg2/'+str(k)+'.jpg')
+    new_frame = Image.open(r'./assets/jpeg2/'+str(k)+'.jpg')
     image_frames.append(new_frame)
 
 image_frames[0].save(
-    'temperature_timelapse2.gif', 
+    './assets/imgs/temperature_timelapse.gif', 
     format = 'gif',
     append_images = image_frames[1:],
     save_all = True, 

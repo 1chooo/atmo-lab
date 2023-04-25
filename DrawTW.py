@@ -38,5 +38,5 @@ m.drawmeridians(
 )
 
 plt.title('Taiwan')
-fig.savefig("Taiwan",dpi=600)
+fig.savefig("./assets/imgs/Taiwan.jpg", dpi=600)
 plt.show()
