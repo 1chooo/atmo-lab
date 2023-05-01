@@ -1,10 +1,11 @@
 from netCDF4 import Dataset
 import numpy as np
 import matplotlib as mpl
-mpl.use('TKAgg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 from PIL import Image
+
+mpl.use('TKAgg')
 
 #read in the data
 data = Dataset(r'./air.sfc.2021.nc')
@@ -39,20 +40,20 @@ for i in days:
     mp.drawcoastlines()
     mp.drawstates()
     mp.drawcountries()
-    cbar = mp.colorbar(c_scheme, location = 'bottom', pad = '10%')
+    cbar = mp.colorbar(c_scheme, location='bottom', pad = '10%')
     day += 1
     plt.title('Global Surface Temperature (K) ' + 'Day' + str(day) + 'of 2021')
     plt.clim(200., 310.)
     #plt.show()
     #fig.savefig('global_surface_temperature', dpi = 680)
-    fig.savefig(r'./assets/jpeg2/'+ str(day)+'.jpg')
+    fig.savefig(r'./assets/jpeg2/' + str(day)+ '.jpg')
 
 image_frames = []
 
 days = np.arange(1,169)
 
 for k in days:
-    new_frame = Image.open(r'./assets/jpeg2/'+str(k)+'.jpg')
+    new_frame = Image.open(r'./assets/jpeg2/' + str(k) + '.jpg')
     image_frames.append(new_frame)
 
 image_frames[0].save(

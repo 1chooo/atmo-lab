@@ -29,6 +29,7 @@ And be helpful for the one who also interested in Atmospheric Science.
 > $ conda install -c conda-forge metpy
 > $ conda install pandas
 > $ conda install netcdf4
+> $ conda install -c conda-forge cartopy
 > ```
 
 ### Verify version

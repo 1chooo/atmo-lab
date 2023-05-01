@@ -35,5 +35,3 @@ plt.title("Title",fontsize=25)
 plt.legend(loc='upper right', fontsize=15)
 #plt.grid()   				#設置網格線
 plt.show()
-
-
