@@ -43,6 +43,42 @@ def observe_merged_data(merged_data) -> None:
     print(merged_data[0])
 
 
+def data_presolving(merged_data) -> list:
+
+    data_len = len(merged_data)
+    tmp = []
+    result = []
+
+    for i in range(data_len):
+        month = str(merged_data[i][0][3:])
+        year = str(merged_data[i][1][3:])
+        day = str(merged_data[i][2][3:])
+        time = str(merged_data[i][3][3:])
+        wind_speed = str(merged_data[i][4][3:])
+        wind_direction = str(merged_data[i][5][3:])
+        temperature = str(merged_data[i][6][3:])
+        humidity = str(merged_data[i][7][3:])
+        pressure = str(merged_data[i][8][3:])
+        radiation = str(merged_data[i][9][3:])
+        rainfall = str(merged_data[i][10][3:])
+        tmp.append(month)
+        tmp.append(year)
+        tmp.append(day)
+        tmp.append(time)
+        tmp.append(wind_speed)
+        tmp.append(wind_direction)
+        tmp.append(temperature)
+        tmp.append(humidity)
+        tmp.append(pressure)
+        tmp.append(radiation)
+        tmp.append(rainfall)
+
+        result.append(tmp)
+        tmp = []
+    
+    return result
+
+
 def data_type_checking(merged_data) -> list:
 
     data_len = len(merged_data)

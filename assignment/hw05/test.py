@@ -45,11 +45,13 @@ for i in range(2880):
 for i in range(len(datas)):
     print(datas[i])
 
-print(datas[0][0][0])
+# print(datas[0][0][0])
 
 
 test0 = lines[0].split()
 test1 = lines[1].split()
+
+print(test0[2][5:-1])
 
 date_str = test0[1][3:-1] + test0[2][5:-1]
 print(date_str)
