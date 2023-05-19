@@ -1,4 +1,4 @@
-# Atmospheric-map
+# Atmo Lab
 
 ## Intro
 
@@ -13,6 +13,20 @@ And be helpful for the one who also interested in Atmospheric Science.
 ``` vim
 $ conda create --name atmpy38 python=3.8
 $ conda activate atmpy38
+```
+
+### Build web
+
+```shell
+pip install mkdocs
+pip install mkdocs-material
+pip install pymdown-extensions
+pip install mkdocstrings
+pip install mkdocs-git-revision-date-plugin
+pip install mkdocs-jupyter
+
+mkdocs serve
+mkdocs build
 ```
 
 ## Under atmpy38
