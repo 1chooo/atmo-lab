@@ -26,6 +26,12 @@ jobs:
       - name: Set up Conda environment
         run: conda create --name py38 python=3.8 -y
 
+      - name: Initialize Conda
+        run: conda init bash
+
+      - name: Reload shell configuration
+        run: source ~/.bashrc
+
       - name: Activate Conda environment
         run: conda activate py38  # 指定您的 Conda 環境名稱
 
