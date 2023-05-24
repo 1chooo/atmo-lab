@@ -18,10 +18,13 @@ jobs:
         with:
           python-version: '3.x'
 
+      # - name: Set up Conda environment
+      #   uses: conda-incubator/setup-miniconda@v2
+      #   with:
+      #     environment-file: env.yml  # 指定您的 Conda 環境檔案名稱
+
       - name: Set up Conda environment
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          environment-file: env.yml  # 指定您的 Conda 環境檔案名稱
+        run: conda create --name py38 python=3.8 -y
 
       - name: Activate Conda environment
         run: conda activate py38  # 指定您的 Conda 環境名稱
