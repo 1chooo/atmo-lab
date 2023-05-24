@@ -26,9 +26,11 @@ jobs:
       - name: Set up Conda environment
         run: |
           conda create --name py38 python=3.8 -y
-          conda activate py38
-          conda install --file env.yml -y
+      #    conda activate py38
+      #    conda install --file env.yml -y
 
+      - name: Activate Conda environment
+        run: conda run --name py38 bash -c "source activate py38 && exec bash"
 
       - name: Install dependencies
         run: |
