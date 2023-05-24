@@ -18,17 +18,14 @@ jobs:
         with:
           python-version: '3.8.16'
 
+      - name: Create and activate virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install numpy
-          pip install matplotlib
-          pip install basemap
-          pip install basemap-data-hires
-          pip install metpy
-          pip install pandas
-          pip install netcdf4
-          pip install cartopy
+          pip install -r requirements.txt
           pip install mkdocs
           pip install mkdocs-material
           pip install pymdown-extensions
