@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -1511,19 +1511,37 @@ mpl.use('TKAgg')</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[1], line 10</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(175,0,0)">&#39;&#39;&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(175,0,0)">@version: 1.0.0</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(175,0,0)">@date: 2023/05/09</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span style="color: rgb(175,0,0)">main.py</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span style="color: rgb(175,0,0)">&#39;&#39;&#39;</span>
-<span class="ansi-green-fg">---&gt; 10</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">netCDF4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> Dataset
-<span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">numpy</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">np</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">matplotlib</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">mpl</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[1], line 17</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">mpl_toolkits</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">basemap</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> Basemap
+<span class="ansi-green-intense-fg ansi-bold">     15</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">PIL</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> Image
+<span class="ansi-green-fg">---&gt; 17</span> <span class="ansi-yellow-bg">mpl</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">use</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">TKAgg</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
 
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;netCDF4&#39;</pre>
+File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/matplotlib/__init__.py:1233</span>, in <span class="ansi-cyan-fg">use</span><span class="ansi-blue-fg">(backend, force)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1228</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> plt <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">   1229</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-intense-fg ansi-bold">   1230</span>         <span style="color: rgb(95,135,135)"># we need this import check here to re-raise if the</span>
+<span class="ansi-green-intense-fg ansi-bold">   1231</span>         <span style="color: rgb(95,135,135)"># user does not have the libraries to support their</span>
+<span class="ansi-green-intense-fg ansi-bold">   1232</span>         <span style="color: rgb(95,135,135)"># chosen backend installed.</span>
+<span class="ansi-green-fg">-&gt; 1233</span>         <span class="ansi-yellow-bg">plt</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">switch_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1234</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ImportError</span>:
+<span class="ansi-green-intense-fg ansi-bold">   1235</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> force:
+
+File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/matplotlib/pyplot.py:279</span>, in <span class="ansi-cyan-fg">switch_backend</span><span class="ansi-blue-fg">(newbackend)</span>
+<span class="ansi-green-intense-fg ansi-bold">    276</span>     current_framework <span style="color: rgb(98,98,98)">=</span> cbook<span style="color: rgb(98,98,98)">.</span>_get_running_interactive_framework()
+<span class="ansi-green-intense-fg ansi-bold">    277</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> (current_framework <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> required_framework
+<span class="ansi-green-intense-fg ansi-bold">    278</span>             <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> current_framework <span style="color: rgb(98,98,98)">!=</span> required_framework):
+<span class="ansi-green-fg">--&gt; 279</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ImportError</span>(
+<span class="ansi-green-intense-fg ansi-bold">    280</span>             <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Cannot load backend </span><span class="ansi-bold" style="color: rgb(175,95,135)">{!r}</span><span style="color: rgb(175,0,0)"> which requires the </span><span class="ansi-bold" style="color: rgb(175,95,135)">{!r}</span><span style="color: rgb(175,0,0)"> interactive </span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    281</span>             <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">framework, as </span><span class="ansi-bold" style="color: rgb(175,95,135)">{!r}</span><span style="color: rgb(175,0,0)"> is currently running</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">.</span>format(
+<span class="ansi-green-intense-fg ansi-bold">    282</span>                 newbackend, required_framework, current_framework))
+<span class="ansi-green-intense-fg ansi-bold">    284</span> <span style="color: rgb(95,135,135)"># Load the new_figure_manager() and show() functions from the backend.</span>
+<span class="ansi-green-intense-fg ansi-bold">    285</span> 
+<span class="ansi-green-intense-fg ansi-bold">    286</span> <span style="color: rgb(95,135,135)"># Classically, backends can directly export these functions.  This should</span>
+<span class="ansi-green-intense-fg ansi-bold">    287</span> <span style="color: rgb(95,135,135)"># keep working for backcompat.</span>
+<span class="ansi-green-intense-fg ansi-bold">    288</span> new_figure_manager <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">getattr</span>(backend_mod, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">new_figure_manager</span><span style="color: rgb(175,0,0)">&#34;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
+
+<span class="ansi-red-fg">ImportError</span>: Cannot load backend &#39;TkAgg&#39; which requires the &#39;tk&#39; interactive framework, as &#39;headless&#39; is currently running</pre>
 </div>
 </div>
 

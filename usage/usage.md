@@ -11,6 +11,16 @@ $ conda activate atmpy38
 ### Build web
 
 ```shell
+
+pip install numpy
+pip install matplotlib
+pip install basemap
+pip install basemap-data-hires
+pip install metpy
+pip install pandas
+pip install netcdf4
+pip install cartopy
+
 pip install mkdocs
 pip install mkdocs-material
 pip install pymdown-extensions
