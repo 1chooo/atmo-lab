@@ -16,12 +16,30 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8.16'
+          python-version: '3.x'
+
+      - name: Set up Conda environment
+        run: conda create --name py38 python=3.8 -y
+
+      - name: Activate Conda environment
+        run: conda activate py38
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install numpy
+          pip install matplotlib
+          pip install basemap
+          pip install basemap-data-hires
+          pip install metpy
+          pip install pandas
+          pip install netcdf4
+          pip install cartopy
+          pip install mkdocs
+          pip install mkdocs-material
+          pip install pymdown-extensions
+          pip install mkdocstrings
+          pip install mkdocs-git-revision-date-plugin
+          pip install mkdocs-jupyter
 
       - name: Build MkDocs
         run: mkdocs build
