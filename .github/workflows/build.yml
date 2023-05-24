@@ -38,6 +38,8 @@ jobs:
           pip install mkdocstrings
           pip install mkdocs-git-revision-date-plugin
           pip install mkdocs-jupyter
+          pip install ipykernel
+
 
       - name: Build MkDocs
         run: mkdocs build
