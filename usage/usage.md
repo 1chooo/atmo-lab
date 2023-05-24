@@ -18,6 +18,13 @@ pip install mkdocstrings
 pip install mkdocs-git-revision-date-plugin
 pip install mkdocs-jupyter
 
+conda install -c conda-forge mkdocs
+conda install -c conda-forge mkdocs-material
+conda install -c conda-forge pymdown-extensions
+conda install -c conda-forge mkdocstrings
+conda install -c conda-forge mkdocs-git-revision-date-plugin
+conda install -c conda-forge mkdocs-jupyter
+
 mkdocs serve
 mkdocs build
 ```
