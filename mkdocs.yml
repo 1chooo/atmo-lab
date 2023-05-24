@@ -22,10 +22,11 @@ plugins:
     - mkdocstrings
     - git-revision-date
     - mkdocs-jupyter:
-          include_source: True
-          execute: True
-          #   ignore_h1_titles: True
-          #   execute_ignore: "*.ipynb"
+        # validate_nb: True
+        include_source: True
+        execute: True
+        #   ignore_h1_titles: True
+        #   execute_ignore: "*.ipynb"
 
 markdown_extensions:
     - attr_list
@@ -35,47 +36,26 @@ markdown_extensions:
     - toc:
           permalink: true
 
-# extra:
+
+extra:
+    conda_env: py38
 #     analytics:
 #         provider: google
 #         property: UA-XXXXXXXXX-X
 
+
+
 nav:
     - Home: index.md
-    - Installation: installation.md
+      #- Installation: installation.md
     - Usage: usage.md
     - Contributing: contributing.md
-    - FAQ: faq.md
-    - Changelog: changelog.md
-    - Example: example.md
+      #- FAQ: faq.md
+      #- Changelog: changelog.md
+      #- Example: example.md
     - Report Issues: https://github.com/1chooo/atmo-lab/issues
-    # - Python Basics:
-    #       - python/01_getting_started.ipynb
-    #       - python/02_variables_data_types.ipynb
-    #       - python/03_introducing_lists.ipynb
-    #       - python/04_working_with_lists.ipynb
-    #       - python/05_if_statements.ipynb
-    #       - python/06_dictionaries.ipynb
-    #       - python/07_user_input_while_loops.ipynb
-    #       - python/08_functions.ipynb
-    #       - python/09_classes.ipynb
-    #       - python/10_files_and_exceptions.ipynb
-    # - Examples: 
-    #       - examples/intro.ipynb
-    #       - examples/foliumap.ipynb
-    #       - examples/geosdemo.ipynb
-    #       - examples/ipyleafleat.ipynb
-    #       - examples/raster.ipynb
-    #       - examples/ipywidgets.ipynb
-    #       - examples/ipywidgets_box.ipynb
-    #       - examples/ipywidgets_events.ipynb
-    #       - examples/toolbar.ipynb
-    #       - examples/test_addtoolbar_func.ipynb
-    #       - examples/Working_with_CloudOptimizedGeoTIFF_simple.ipynb
-    # - API Reference:
-    #       - geosdemo module: geosdemo.md
-    #       - foliumap module: foliumap.md
-    
-    # - Assignments:
-    #       - labs/lab4.ipynb
-    #       - labs/lab5.ipynb
+    - Showcase:
+        - showcase/draw_Taiwan.ipynb
+        - showcase/draw_Boston.ipynb
+        - showcase/surface_temperature.ipynb
+

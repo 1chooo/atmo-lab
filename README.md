@@ -55,6 +55,7 @@ $ python
 >>> from mpl.toolkits.basemap import Basemap
 >>> quit()
 ```
+jupyter nbconvert --to markdown draw_Taiwan.ipynb
 
 ## Project Showcase
 
