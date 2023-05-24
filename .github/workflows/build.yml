@@ -18,19 +18,22 @@ jobs:
         with:
           python-version: '3.x'
 
+      # - name: Set up Conda environment
+      #   uses: conda-incubator/setup-miniconda@v2
+      #   with:
+      #     environment-file: env.yml
+
       - name: Set up Conda environment
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          environment-file: env.yml  # 指定您的 Conda 環境檔案名稱
+        run: |
+          conda create --name py38 python=3.8 -y
+          conda activate py38
+          conda install --file env.yml -y
 
-      - name: Initialize Conda
-        run: conda init bash
 
-      - name: Reload shell configuration
-        run: source ~/.bashrc
-
-      - name: Activate Conda environment
-        run: conda run --name py38 bash -c "pip install --upgrade pip && pip install -r requirements.txt"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Build MkDocs
         run: mkdocs build
