@@ -30,7 +30,10 @@ jobs:
       #    conda install --file env.yml -y
 
       - name: Activate Conda environment
-        run: conda run --name py38 bash -c "source activate py38 && exec bash"
+        run: conda activate py38
+
+      - name: Install environment dependencies
+        run: conda install --file env.yml -y
 
       - name: Install dependencies
         run: |
