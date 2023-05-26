@@ -1,5 +1,9 @@
 site_name: Atmo Lab
 
+site_description: My observation about the Atmospheric Science.
+
+site_author: 1chooo(Hugo ChunHo Lin)
+
 site_url: https://1chooo.github.io/atmo-lab/
 
 repo_url: https://github.com/1chooo/atmo-lab
@@ -54,8 +58,39 @@ nav:
       #- Changelog: changelog.md
       #- Example: example.md
     - Report Issues: https://github.com/1chooo/atmo-lab/issues
+    - Fortran Basic:
+        - fortran_basic/01_hello_world.md
+    - Python Basic:
+        - python_basic/01_hello_world.ipynb
     - Showcase:
-        - showcase/draw_Taiwan.ipynb
-        - showcase/draw_Boston.ipynb
-        - showcase/surface_temperature.ipynb
+        - showcase/thermodynamic_diagram.ipynb
+        - showcase/pibal_obs.ipynb
+        - showcase/tower.ipynb
+        # - showcase/surface_temperature.ipynb
+        - Country:
+            - showcase/country/draw_global.ipynb
+            - showcase/country/draw_Africa.ipynb
+            - showcase/country/draw_Americas.ipynb
+            - showcase/country/draw_Arabia.ipynb
+            - showcase/country/draw_Arctic.ipynb
+            - showcase/country/draw_Asia.ipynb
+            - showcase/country/draw_Boston.ipynb
+            - showcase/country/draw_Canada.ipynb
+            - showcase/country/draw_China.ipynb
+            - showcase/country/draw_Egypt.ipynb
+            - showcase/country/draw_Europe.ipynb
+            - showcase/country/draw_France.ipynb
+            - showcase/country/draw_Germany.ipynb
+            - showcase/country/draw_India.ipynb
+            - showcase/country/draw_Italy.ipynb
+            - showcase/country/draw_Japan.ipynb
+            - showcase/country/draw_Korea.ipynb
+            - showcase/country/draw_Oceania.ipynb
+            - showcase/country/draw_Russia.ipynb
+            - showcase/country/draw_Singapore.ipynb
+            - showcase/country/draw_Taiwan.ipynb
+            - showcase/country/draw_UK.ipynb
+            - showcase/country/draw_Ukraine.ipynb
+            - showcase/country/draw_USA.ipynb
+            
 

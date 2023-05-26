@@ -1,0 +1,18 @@
+{
+    "Taiwan": {
+        "minLat": 21.75,
+        "maxLat": 25.5,
+        "minLon": 119.25,
+        "maxLon": 122.5,
+        "parallels": {
+            "min": 21.0,
+            "max": 26.1,
+            "step": 1
+        },
+        "meridians": {
+            "min": 119.0,
+            "max": 123.1,
+            "step": 1
+        }
+    }
+}
