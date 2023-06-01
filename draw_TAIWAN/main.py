@@ -65,23 +65,6 @@ m.drawmeridians(
 
 plt.title('Map of Taiwan with Elevation Data', fontsize=20)
 
-# # Move the axis labels outward
-
-# ax.tick_params(axis='both', which='major', pad=10)
-
-# # Set the labels for the x and y axes.
-
-# plt.xlabel('Longitude', fontsize=16)
-# plt.ylabel('Latitude', fontsize=16)
-
-# Create a dummy image for the colorbar.
-
-im = ax.imshow(np.zeros((4, 4)), cmap='Blues', vmin=0, vmax=1)
-
-# Add a colorbar with the specified label and position.
-
-colorbar = plt.colorbar(im, fraction=0.046, pad=0.04, label='Elevation (m)')
-
 # Save the figure and display it.
 
 fig.savefig("./img/Taiwan.jpg", dpi=600)

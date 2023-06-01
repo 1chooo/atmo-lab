@@ -8,6 +8,8 @@ site_url: https://1chooo.github.io/atmo-lab/
 
 repo_url: https://github.com/1chooo/atmo-lab
 
+copyright: Copyright &copy; 2023 1chooo (Hugo ChunHo Lin)
+
 theme:
     palette:
         scheme: preference
@@ -19,16 +21,18 @@ theme:
         - search.highlight
         # - navigation.expand
         # - navigation.tabs
-    # custom_dir: "docs/overrides"
+    favicon: assets/favicon.ico
+    icon:
+        logo: logo
 
 plugins:
     - search
     - mkdocstrings
     - git-revision-date
     - mkdocs-jupyter:
-        # validate_nb: True
         include_source: True
         execute: True
+        # validate_nb: True
         #   ignore_h1_titles: True
         #   execute_ignore: "*.ipynb"
 
@@ -36,13 +40,22 @@ markdown_extensions:
     - attr_list
     - pymdownx.superfences
     - pymdownx.highlight:
-          linenums: true
+        linenums: true
     - toc:
-          permalink: true
+        permalink: true
 
 
 extra:
-    conda_env: py38
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/1chooo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/1chooo___
+    # - icon: fas fa-rss
+    #   link: https://sites.google.com/g.ncu.edu.tw/1chooo/portfolio?authuser=0
+    # - icon: fab fa-linkedin
+    #   link: https://www.linkedin.com/in/1chooo/
+    # conda_env: py38
 #     analytics:
 #         provider: google
 #         property: UA-XXXXXXXXX-X
@@ -53,11 +66,6 @@ nav:
     - Home: index.md
       #- Installation: installation.md
     - Usage: usage.md
-    - Contributing: contributing.md
-      #- FAQ: faq.md
-      #- Changelog: changelog.md
-      #- Example: example.md
-    - Report Issues: https://github.com/1chooo/atmo-lab/issues
     - Fortran Basic:
         - fortran_basic/01_hello_world.md
     - Python Basic:
@@ -66,31 +74,36 @@ nav:
         - showcase/thermodynamic_diagram.ipynb
         - showcase/pibal_obs.ipynb
         - showcase/tower.ipynb
+        - showcase/typhoon_analysis.ipynb
         # - showcase/surface_temperature.ipynb
-        - Country:
-            - showcase/country/draw_global.ipynb
-            - showcase/country/draw_Africa.ipynb
-            - showcase/country/draw_Americas.ipynb
-            - showcase/country/draw_Arabia.ipynb
-            - showcase/country/draw_Arctic.ipynb
-            - showcase/country/draw_Asia.ipynb
-            - showcase/country/draw_Boston.ipynb
-            - showcase/country/draw_Canada.ipynb
-            - showcase/country/draw_China.ipynb
-            - showcase/country/draw_Egypt.ipynb
-            - showcase/country/draw_Europe.ipynb
-            - showcase/country/draw_France.ipynb
-            - showcase/country/draw_Germany.ipynb
-            - showcase/country/draw_India.ipynb
-            - showcase/country/draw_Italy.ipynb
-            - showcase/country/draw_Japan.ipynb
-            - showcase/country/draw_Korea.ipynb
-            - showcase/country/draw_Oceania.ipynb
-            - showcase/country/draw_Russia.ipynb
-            - showcase/country/draw_Singapore.ipynb
-            - showcase/country/draw_Taiwan.ipynb
-            - showcase/country/draw_UK.ipynb
-            - showcase/country/draw_Ukraine.ipynb
-            - showcase/country/draw_USA.ipynb
-            
-
+    - Country:
+        - Global: country/draw_global.ipynb
+        - Africa: country/draw_Africa.ipynb
+        - Americas: country/draw_Americas.ipynb
+        - Arabia: country/draw_Arabia.ipynb
+        - Arctic: country/draw_Arctic.ipynb
+        - Asia: country/draw_Asia.ipynb
+        - Boston: country/draw_Boston.ipynb
+        - Canada: country/draw_Canada.ipynb
+        - China: country/draw_China.ipynb
+        - Egypt: country/draw_Egypt.ipynb
+        - Europe: country/draw_Europe.ipynb
+        - France: country/draw_France.ipynb
+        - Germany: country/draw_Germany.ipynb
+        - India: country/draw_India.ipynb
+        - Italy: country/draw_Italy.ipynb
+        - Japan: country/draw_Japan.ipynb
+        - Oceania: country/draw_Oceania.ipynb
+        - Russia: country/draw_Russia.ipynb
+        - Singapore: country/draw_Singapore.ipynb
+        - Korea: country/draw_South_Korea.ipynb
+        - Taiwan: country/draw_Taiwan.ipynb
+        - UK: country/draw_UK.ipynb
+        - Ukraine: country/draw_Ukraine.ipynb
+        - USA: country/draw_USA.ipynb
+    - Contributing: contributing.md
+      #- FAQ: faq.md
+      #- Changelog: changelog.md
+      #- Example: example.md
+    - Reference: reference.md
+    - Report Issues: https://github.com/1chooo/atmo-lab/issues
