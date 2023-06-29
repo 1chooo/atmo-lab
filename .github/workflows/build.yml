@@ -33,6 +33,7 @@ jobs:
           pip install pandas
           pip install netcdf4
           pip install mkdocs
+          pip install seaborn
           pip install mkdocs-material
           pip install pymdown-extensions
           pip install mkdocstrings

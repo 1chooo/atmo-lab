@@ -18,6 +18,8 @@ theme:
         repo: fontawesome/brands/github
     features:
         - navigation.instant
+        - navigation.top
+        - navigation.tabs
         - search.highlight
         # - navigation.expand
         # - navigation.tabs
@@ -70,9 +72,13 @@ nav:
         - fortran_basic/01_hello_world.md
     - Python Basic:
         - python_basic/01_hello_world.ipynb
+        - python_basic/calculus.ipynb
     - Showcase:
-        - showcase/thermodynamic_diagram.ipynb
+        - showcase/fourier_analysis.ipynb
+        - showcase/global_temperature.ipynb
         - showcase/pibal_obs.ipynb
+        - showcase/quiver_contour.ipynb
+        - showcase/thermodynamic_diagram.ipynb
         - showcase/tower.ipynb
         - showcase/typhoon_analysis.ipynb
         # - showcase/surface_temperature.ipynb
