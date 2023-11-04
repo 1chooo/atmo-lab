@@ -5,16 +5,24 @@ Author: @1chooo (Hugo ChunHo Lin)
 Version: v0.0.1
 '''
 
-import numpy as np
-import cartopy.crs as ccrs
-import matplotlib.pyplot as plt
-import cartopy.feature as cfeature
 import os
+import numpy as np
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
 
 def load_data(filename: str):
-    data = np.fromfile(filename, dtype='<f4')
+    data = np.fromfile(
+        filename, 
+        dtype='<f4'
+    )
     var, nlev, nlat, mlon = 3, 3, 46, 91
-    data = data.reshape(var, nlev, nlat, mlon)
+    data = data.reshape(
+        var, 
+        nlev, 
+        nlat, 
+        mlon
+    )
 
     return data
 
@@ -34,11 +42,19 @@ def count_geowind(h, lat, lon):
     mlon = 91
     omega = 7.29 * (10 ** -5)
     dy = 6378000 * np.pi / 180
-    geo_windU = np.zeros(
-        [nlev, nlat, mlon]
+    geo_wind_U = np.zeros(
+        [
+            nlev, 
+            nlat, 
+            mlon
+        ]
     )
-    geo_windV = np.zeros(
-        [nlev, nlat, mlon]
+    geo_wind_V = np.zeros(
+        [
+            nlev, 
+            nlat, 
+            mlon
+        ]
     )
 
     for i in range(nlev):
@@ -65,14 +81,15 @@ def count_geowind(h, lat, lon):
                     else:
                         y_value = (h[i, j, k + 1] - h[i, j, k - 1]) / (2 * dx * f)
 
-                geo_windU[i, j, k] = 9.8 * x_value
-                geo_windV[i, j, k] = 9.8 * y_value
+                geo_wind_U[i, j, k] = 9.8 * x_value
+                geo_wind_V[i, j, k] = 9.8 * y_value
 
-    return geo_windU, geo_windV
+    return geo_wind_U, geo_wind_V
 
 def count_nona_geowind(u, v, ug, vg):
     ua = u - ug
     va = v - vg
+
     return ua, va
 
 def count_divergence(u, v, lat, dy):
@@ -109,8 +126,9 @@ def count_divergence(u, v, lat, dy):
 
     return divergence
 
-def plot_wind_vector(lon, lat, u, v):
+def visualize_geo_wind_height(lon, lat, u, v, h):
     wspd = (u ** 2 + v ** 2) ** 0.5
+    title = "200mb Geostrophic Wind and Height"
 
     plt.figure(dpi=400)
     ax = plt.axes(
@@ -123,7 +141,7 @@ def plot_wind_vector(lon, lat, u, v):
     ax.add_feature(cfeature.LAND)
     ax.add_feature(cfeature.COASTLINE)
     ax.add_feature(cfeature.BORDERS)
-    ax.set_title("200mb Geostrophic Wind and Height")
+    ax.set_title(title)
 
     contourf = plt.contourf(
         lon, 
@@ -185,11 +203,14 @@ def plot_wind_vector(lon, lat, u, v):
         output_file_name, 
         exist_ok=True
     )
-    plt.savefig(f"{output_file_name}/{output_file_name}.png")
+    output_dir = f"./{output_file_name}/{output_file_name}.png"
+    plt.savefig(output_dir)
 
+    # print(f"{title} has been saved in {output_dir}")
     # plt.show()
 
-def visualize_wind_divergence(lon, lat, div, u, v):
+def visualize_geo_wind_height_divergence(lon, lat, div, u, v, h):
+    title = "200mb Geostrophic Wind, Height and Divergence"
     output_file_name = "200mb_geostrophic_wind_height_and_divergence"
     os.makedirs(
         output_file_name,
@@ -207,7 +228,7 @@ def visualize_wind_divergence(lon, lat, div, u, v):
     ax.add_feature(cfeature.LAND)
     ax.add_feature(cfeature.COASTLINE)
     ax.add_feature(cfeature.BORDERS)
-    ax.set_title("200mb Geostrophic Wind, Height and Divergence")
+    ax.set_title(title)
 
     contourf = plt.contourf(
         lon, 
@@ -262,7 +283,8 @@ def visualize_wind_divergence(lon, lat, div, u, v):
         color='black'
     )
 
-    plt.savefig(f"{output_file_name}/{output_file_name}.png")
+    output_dir = f"./{output_file_name}/{output_file_name}.png"
+    plt.savefig(output_dir)
 
     # plt.show()
 
@@ -355,19 +377,65 @@ def visualize_wind_height(lon, lat, h, u, v):
             fontproperties={'size': 8}
         )
 
-        plt.savefig(f"wind_and_height/{file_name}.png")
+        output_dir = f"./wind_and_height/{file_name}.png"
+        plt.savefig(output_dir)
 
         # plt.show()
 
-if __name__ == "__main__":
+def main():
     dy = 6378000 * np.pi / 180
     filename = './data/fnldata.dat'
     data = load_data(filename)
-    lon, lat, h, u, v = configure_parameters(data)
-    ug, vg = count_geowind(h, lat, lon)
-    plot_wind_vector(lon, lat, ug[0, :, :], vg[0, :, :])
-    div = count_divergence(u, v, lat, dy)
-    ua, va = count_nona_geowind(u, v, ug, vg)
-    visualize_wind_divergence(lon, lat, div[0, :, :], ua[0, :, :], va[0, :, :])
-    visualize_wind_height(lon, lat, h, u, v)
+    (
+        lon, 
+        lat, 
+        h, 
+        u, 
+        v
+    ) = configure_parameters(data)
+    (
+        ug, 
+        vg
+    ) = count_geowind(
+        h, 
+        lat, 
+        lon
+    )
+    visualize_geo_wind_height(
+        lon, 
+        lat, 
+        ug[0, :, :], 
+        vg[0, :, :], 
+        h
+    )
+    div = count_divergence(
+        u, 
+        v, 
+        lat, 
+        dy
+    )
+    ua, va = count_nona_geowind(
+        u, 
+        v, 
+        ug, 
+        vg
+    )
+    visualize_geo_wind_height_divergence(
+        lon, 
+        lat, 
+        div[0, :, :], 
+        ua[0, :, :], 
+        va[0, :, :], 
+        h
+    )
+    visualize_wind_height(
+        lon, 
+        lat, 
+        h, 
+        u, 
+        v
+    )
+
+if __name__ == "__main__":
+    main()
 
