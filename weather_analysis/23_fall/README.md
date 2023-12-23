@@ -14,6 +14,7 @@
 - [x] [HW4](./hw04/)
 - [x] [HW5](./hw05/)
 - [x] [AO and Zonal index](./hw06/)
+- [x] [Synoptic Frontal Analysis](./hw07/)
 
 
 ## Report
