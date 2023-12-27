@@ -12,6 +12,9 @@ import matplotlib.pyplot as plt
 import cartopy.feature as cfeature
 import os
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 def load_data(
         file_name: str,
         var, 

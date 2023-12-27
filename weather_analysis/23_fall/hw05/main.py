@@ -13,7 +13,7 @@ import numpy as np
 
 def lorenz(
         xyzth, 
-        theta, 
+        theta,
         s=10., 
         r=24.74, 
         b=2.6666667, 

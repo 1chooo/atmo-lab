@@ -11,6 +11,10 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 def load_data(filename: str):
     data = np.fromfile(
         filename, 
