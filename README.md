@@ -62,8 +62,8 @@ jupyter nbconvert --to markdown draw_Taiwan.ipynb
 | Name  | Display |
 | ----------- | -------------------------------- |
 | Global Surface Temperature | <a href="https://github.com/1chooo/global-climate/tree/main/surface_temperature"><img src="./assets/imgs/temperature_timelapse.gif" alt="temperature timelapse" width="200"></a> |
-| Draw TAIWAN | <a href="https://github.com/1chooo/global-climate/tree/main/draw_TAIWAN"><img src="./draw_TAIWAN/img/Taiwan.jpg" alt="temperature timelapse" width="200"></a> |
-| $CO_2$ Emission | <a href="https://github.com/1chooo/global-climate/tree/main/"><img src="./chem/src/imgs/watermark/monthly_mean/co2_recent_monthly_mean.jpg" alt="temperature timelapse" width="200"></a> |
+| Draw TAIWAN | <a href="https://github.com/1chooo/global-climate/tree/main/draw_TAIWAN"><img src="./assets/imgs/Taiwan.jpg" alt="temperature timelapse" width="200"></a> |
+| $CO_2$ Emission | <a href="https://github.com/1chooo/global-climate/tree/main/"><img src="./assets/imgs/co2_monthly_mean.jpg" alt="temperature timelapse" width="200"></a> |
 
 <!-- <a href="<link>"><img src="./chem/src/imgs/watermark/monthly_mean/co2_recent_monthly_mean.jpg" alt="temperature timelapse" width="200"></a> -->
 
